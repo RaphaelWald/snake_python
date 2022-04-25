@@ -8,6 +8,11 @@ class Snake:
         self.direction = direction
         self.display_deque()
         self.moving = True
+        self.duration = 100_000_000
+        self.duration_factor = 0.999
+
+    def __len__(self):
+        return len(self.deque)-1
 
     def _contains__(self, field):
         f_x, f_y = field
